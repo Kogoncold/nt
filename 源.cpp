@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <windows.h>
+#include <thread>
 
 #include "函数.h"
 #include "结构体.h"
@@ -11,6 +12,10 @@
 
 using std::ios;
 using std::ofstream;
+
+void T1() {
+
+}
 
 int main() {
 	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
@@ -193,14 +198,29 @@ int main() {
 
 	FullMode FM1;
 	std::ofstream OFS2;
-	OFS1.open("AnswerStorage_FM.txt");
-	std::cout << "请输入您所需要的题号中的第一个字符串:" << std::endl;
-	getline(std::cin, FM1.da1);
-	std::cout << "请选择您所需要的题号偏好（A/C；A为阿拉伯数字(小题)，C为中文数字（大题））" << std::endl;
-	getline(std::cin, FM1.da1);
-	if (FM1.da1 == "C") {
-
+	OFS2.open("AnswerStorage_FM.txt");
+	std::cout << "是否启用题号与选项间空格？（是请输入Y，否请输入N）" << std::endl;
+	getline(std::cin, FM1.da3);
+	for (;;) {
+		std::cout << "请输入您所需的第" << ++FM1.d1 << "题中题号的字符串:" << std::endl;
+		getline(std::cin, FM1.da1);
+		std::cout << "请输入您所需要的选项答案字符串（保存请输入O）" << std::endl;
+		getline(std::cin, FM1.da2);
+		if (FM1.da3 == "Y") {
+			OFS2 << FM1.da1 << " " << FM1.da2<< std::endl;
+		}
+		else if (FM1.da3 == "N") {
+			OFS2 << FM1.da1 <<FM1.da2<<  std::endl;
+		}
+		else {
+			OFS2.close();
+			remove("AnswerStorage_FM.txt");
+			std::cout << "未知的选项！存储文件已删除！请重新运行程序!" << std::endl;
+			break;
+		}
 	}
 	//全面模式
-	return 0;
+
+		system("pause");
+		return 0;
 }
