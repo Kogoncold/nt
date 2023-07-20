@@ -191,16 +191,5 @@ int main() {
 	}
 	//简单模式
 
-	FullMode FM1;
-	std::ofstream OFS2;
-	OFS1.open("AnswerStorage_FM.txt");
-	std::cout << "请输入您所需要的题号中的第一个字符串:" << std::endl;
-	getline(std::cin, FM1.da1);
-	std::cout << "请选择您所需要的题号偏好（A/C；A为阿拉伯数字(小题)，C为中文数字（大题））" << std::endl;
-	getline(std::cin, FM1.da1);
-	if (FM1.da1 == "C") {
-
-	}
-	//全面模式
 	return 0;
 }
