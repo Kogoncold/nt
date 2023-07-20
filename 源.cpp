@@ -19,22 +19,17 @@ int main() {
 		getline(std::cin, p1.b1);
 
 		if (p1.b1 == "Y") {
-
-			system("color 07");
 			std::cout << "是否确认开启该项？" << std::endl;
 			getline(std::cin, p1.b2);
 
 			if (p1.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p1.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
@@ -42,28 +37,23 @@ int main() {
 
 		else if (p1.b1 == "N") {
 
-			system("color 07");
 			std::cout << "是否确认关闭该项？" << std::endl;
 			getline(std::cin, p1.b2);
 
 			if (p1.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p1.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
 		}
 
 		else {
-			system("color 04");
 			std::cout << "未知的选项，请重新输入！" << std::endl;
 			continue;
 		}
@@ -81,16 +71,13 @@ int main() {
 			getline(std::cin, p2.b2);
 
 			if (p2.b2 == "C") {
-				system("color 07");
 				break;
 			}
 			else if (p2.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
 				std::cout << "未知的选项，请重新输入！" << std::endl;
-				system("color 04");
 				continue;
 			}
 		}
@@ -102,22 +89,18 @@ int main() {
 
 			if (p2.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p2.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
 		}
 
 		else {
-			system("color 04");
 			std::cout << "未知的选项，请重新输入！" << std::endl;
 			continue;
 		}
@@ -134,17 +117,14 @@ int main() {
 			getline(std::cin, p3.b2);
 
 			if (p3.b2 == "C") {
-				system("color 07");
 
 				break;
 			}
 			else if (p3.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
 				std::cout << "未知的选项，请重新输入！" << std::endl;
-				system("color 04");
 				continue;
 			}
 		}
@@ -156,22 +136,18 @@ int main() {
 
 			if (p3.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p3.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
 		}
 
 		else {
-			system("color 04");
 			std::cout << "未知的选项，请重新输入！" << std::endl;
 			continue;
 		}
@@ -211,6 +187,7 @@ int main() {
 		}
 	}
 	//简单模式
+
 
 	return 0;
 }
