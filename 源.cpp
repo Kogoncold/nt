@@ -1,15 +1,18 @@
 #include <iostream>
+#include <vector>
 #include <istream>
 #include <fstream>
 #include <string>
 #include <windows.h>
-#include "b2.h"
+
+#include "函数.h"
+#include "结构体.h"
+#include "类.h"
 
 using std::ios;
 using std::ofstream;
 
 int main() {
-
 	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
 
 	Preset p1;//是否批量处理
@@ -156,7 +159,7 @@ int main() {
 
 	SimpleMode SM1;
 	std::ofstream OFS1;
-	OFS1.open("AnswerStorage.txt");
+	OFS1.open("AnswerStorage_SM.txt");
 	for (;;) {
 		std::cout << "第" << ++SM1.c1 << "题" << std::endl;
 		std::cout << "请输入预设答案(输入O为结束输入）：" << std::endl;
@@ -188,6 +191,16 @@ int main() {
 	}
 	//简单模式
 
+	FullMode FM1;
+	std::ofstream OFS2;
+	OFS1.open("AnswerStorage_FM.txt");
+	std::cout << "请输入您所需要的题号中的第一个字符串:" << std::endl;
+	getline(std::cin, FM1.da1);
+	std::cout << "请选择您所需要的题号偏好（A/C；A为阿拉伯数字(小题)，C为中文数字（大题））" << std::endl;
+	getline(std::cin, FM1.da1);
+	if (FM1.da1 == "C") {
 
+	}
+	//全面模式
 	return 0;
 }
