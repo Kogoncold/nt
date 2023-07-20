@@ -9,17 +9,12 @@
 #include "函数.h"
 #include "结构体.h"
 #include "类.h"
+#include "线程1.h"
 
 using std::ios;
 using std::ofstream;
 
 void T1() {
-
-}
-
-int main() {
-	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
-
 	Preset p1;//是否批量处理
 	for (;;) {
 
@@ -66,7 +61,10 @@ int main() {
 			continue;
 		}
 	}
+}
+//线程1
 
+void T2() {
 	Preset p2;//是否超过整型阈值
 	for (;;) {
 
@@ -113,7 +111,10 @@ int main() {
 			continue;
 		}
 	}
+}
+//线程2
 
+void T3() {
 	Preset p3;//是否简单模式
 	for (;;) {
 
@@ -125,7 +126,7 @@ int main() {
 			getline(std::cin, p3.b2);
 
 			if (p3.b2 == "C") {
-
+				GJ1 = true;
 				break;
 			}
 			else if (p3.b2 == "A") {
@@ -143,7 +144,7 @@ int main() {
 			getline(std::cin, p3.b2);
 
 			if (p3.b2 == "C") {
-
+				GJ1 = false;
 				break;
 			}
 			else if (p3.b2 == "A") {
@@ -161,7 +162,10 @@ int main() {
 		}
 	}
 	//预先设置
+}
+//线程3
 
+void T4() {
 	SimpleMode SM1;
 	std::ofstream OFS1;
 	OFS1.open("AnswerStorage_SM.txt");
@@ -195,22 +199,33 @@ int main() {
 		}
 	}
 	//简单模式
+}
+//线程4
 
+void T5() {
 	FullMode FM1;
 	std::ofstream OFS2;
 	OFS2.open("AnswerStorage_FM.txt");
 	std::cout << "是否启用题号与选项间空格？（是请输入Y，否请输入N）" << std::endl;
 	getline(std::cin, FM1.da3);
 	for (;;) {
-		std::cout << "请输入您所需的第" << ++FM1.d1 << "题中题号的字符串:" << std::endl;
+		std::cout << "请输入您所需的第" << ++FM1.d1 << "题中题号的字符串(保存请输入O）:" << std::endl;
 		getline(std::cin, FM1.da1);
-		std::cout << "请输入您所需要的选项答案字符串（保存请输入O）" << std::endl;
+
+		if (FM1.da1 == "O") {
+			OFS2.close();
+			std::cout << "存储文件已保存！" << std::endl;
+			break;
+		}
+
+		std::cout << "请输入您所需要的选项答案字符串:" << std::endl;
 		getline(std::cin, FM1.da2);
+
 		if (FM1.da3 == "Y") {
-			OFS2 << FM1.da1 << " " << FM1.da2<< std::endl;
+			OFS2 << FM1.da1 << " " << FM1.da2 << std::endl;
 		}
 		else if (FM1.da3 == "N") {
-			OFS2 << FM1.da1 <<FM1.da2<<  std::endl;
+			OFS2 << FM1.da1 << FM1.da2 << std::endl;
 		}
 		else {
 			OFS2.close();
@@ -220,7 +235,26 @@ int main() {
 		}
 	}
 	//全面模式
+}
+//线程5
 
-		system("pause");
+int main() {
+	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
+	std::thread first(T1);
+	first.join();
+	std::thread second(T2);
+	second.join();
+	std::thread third(T3);
+	third.join();
+	if (GJ1 == true){
+		std::thread fourth(T4);
+		fourth.join();
+	}
+	else if (GJ1== false) {
+		std::thread  fifth(T5);
+		fifth.join();
+	}
+
+	system("pause");
 		return 0;
 }
