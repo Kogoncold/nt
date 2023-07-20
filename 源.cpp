@@ -1,15 +1,18 @@
 #include <iostream>
+#include <vector>
 #include <istream>
 #include <fstream>
 #include <string>
 #include <windows.h>
-#include "b2.h"
+
+#include "函数.h"
+#include "结构体.h"
+#include "类.h"
 
 using std::ios;
 using std::ofstream;
 
 int main() {
-
 	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
 
 	Preset p1;//是否批量处理
@@ -19,22 +22,17 @@ int main() {
 		getline(std::cin, p1.b1);
 
 		if (p1.b1 == "Y") {
-
-			system("color 07");
 			std::cout << "是否确认开启该项？" << std::endl;
 			getline(std::cin, p1.b2);
 
 			if (p1.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p1.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
@@ -42,28 +40,23 @@ int main() {
 
 		else if (p1.b1 == "N") {
 
-			system("color 07");
 			std::cout << "是否确认关闭该项？" << std::endl;
 			getline(std::cin, p1.b2);
 
 			if (p1.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p1.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
 		}
 
 		else {
-			system("color 04");
 			std::cout << "未知的选项，请重新输入！" << std::endl;
 			continue;
 		}
@@ -81,16 +74,13 @@ int main() {
 			getline(std::cin, p2.b2);
 
 			if (p2.b2 == "C") {
-				system("color 07");
 				break;
 			}
 			else if (p2.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
 				std::cout << "未知的选项，请重新输入！" << std::endl;
-				system("color 04");
 				continue;
 			}
 		}
@@ -102,22 +92,18 @@ int main() {
 
 			if (p2.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p2.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
 		}
 
 		else {
-			system("color 04");
 			std::cout << "未知的选项，请重新输入！" << std::endl;
 			continue;
 		}
@@ -134,17 +120,14 @@ int main() {
 			getline(std::cin, p3.b2);
 
 			if (p3.b2 == "C") {
-				system("color 07");
 
 				break;
 			}
 			else if (p3.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
 				std::cout << "未知的选项，请重新输入！" << std::endl;
-				system("color 04");
 				continue;
 			}
 		}
@@ -156,22 +139,18 @@ int main() {
 
 			if (p3.b2 == "C") {
 
-				system("color 07");
 				break;
 			}
 			else if (p3.b2 == "A") {
-				system("color 07");
 				continue;
 			}
 			else {
-				system("color 04");
 				std::cout << "未知的选项，请重新输入！" << std::endl;
 				continue;
 			}
 		}
 
 		else {
-			system("color 04");
 			std::cout << "未知的选项，请重新输入！" << std::endl;
 			continue;
 		}
@@ -180,7 +159,7 @@ int main() {
 
 	SimpleMode SM1;
 	std::ofstream OFS1;
-	OFS1.open("AnswerStorage.txt");
+	OFS1.open("AnswerStorage_SM.txt");
 	for (;;) {
 		std::cout << "第" << ++SM1.c1 << "题" << std::endl;
 		std::cout << "请输入预设答案(输入O为结束输入）：" << std::endl;
@@ -212,5 +191,16 @@ int main() {
 	}
 	//简单模式
 
+	FullMode FM1;
+	std::ofstream OFS2;
+	OFS1.open("AnswerStorage_FM.txt");
+	std::cout << "请输入您所需要的题号中的第一个字符串:" << std::endl;
+	getline(std::cin, FM1.da1);
+	std::cout << "请选择您所需要的题号偏好（A/C；A为阿拉伯数字(小题)，C为中文数字（大题））" << std::endl;
+	getline(std::cin, FM1.da1);
+	if (FM1.da1 == "C") {
+
+	}
+	//全面模式
 	return 0;
 }

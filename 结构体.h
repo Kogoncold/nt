@@ -14,16 +14,3 @@ struct Preset {
 };
 //预先设置
 
-struct SimpleMode {
-	int c1 = 0;
-	std::string c2;
-	std::string c3;
-};
-//简单模式
-
-struct FullMode {
-	double d1 = 0.0;
-	std::string d2;
-	std::string d3;
-};
-//全面模式
