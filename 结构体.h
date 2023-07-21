@@ -3,16 +3,16 @@
 #include <string>
 
 struct topic {
-	std::string a1;//ÌâºÅ
-	std::string a2;//Ñ¡Ïî´ğ°¸
+	std::string a1;//é¢˜å·
+	std::string a2;//é€‰é¡¹ç­”æ¡ˆ
 };
-//ÌâÄ¿
+//é¢˜ç›®
 
 
 struct Preset {
-	std::string b1;//µÚÒ»´ÎÈ·ÈÏ
-	std::string b2;//µÚ¶ş´ÎÈ·ÈÏ
+	std::string b1;//ç¬¬ä¸€æ¬¡ç¡®è®¤
+	std::string b2;//ç¬¬äºŒæ¬¡ç¡®è®¤
 };
-//Ô¤ÏÈÉèÖÃ
+//é¢„å…ˆè®¾ç½®
 
 bool GJ1;
