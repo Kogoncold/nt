@@ -6,7 +6,6 @@
 #include <windows.h>
 #include <thread>
 
-#include "函数.h"
 #include "结构体.h"
 #include "类.h"
 

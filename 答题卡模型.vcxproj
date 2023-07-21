@@ -136,7 +136,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="函数.h" />
     <ClInclude Include="结构体.h" />
     <ClInclude Include="类.h" />
   </ItemGroup>

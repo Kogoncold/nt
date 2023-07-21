@@ -26,9 +26,6 @@
     <ClInclude Include="结构体.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="函数.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="类.h">
       <Filter>头文件</Filter>
     </ClInclude>
