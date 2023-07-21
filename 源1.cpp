@@ -14,106 +14,6 @@
 using std::ios;
 using std::ofstream;
 
-void T1() {
-	Preset p1;//是否批量处理
-	for (;;) {
-
-		std::cout << "预先项目1:是否批量处理？" << std::endl;
-		getline(std::cin, p1.b1);
-
-		if (p1.b1 == "Y") {
-			std::cout << "是否确认开启该项？" << std::endl;
-			getline(std::cin, p1.b2);
-
-			if (p1.b2 == "C") {
-
-				break;
-			}
-			else if (p1.b2 == "A") {
-				continue;
-			}
-			else {
-				std::cout << "未知的选项，请重新输入！" << std::endl;
-				continue;
-			}
-		}
-
-		else if (p1.b1 == "N") {
-
-			std::cout << "是否确认关闭该项？" << std::endl;
-			getline(std::cin, p1.b2);
-
-			if (p1.b2 == "C") {
-
-				break;
-			}
-			else if (p1.b2 == "A") {
-				continue;
-			}
-			else {
-				std::cout << "未知的选项，请重新输入！" << std::endl;
-				continue;
-			}
-		}
-
-		else {
-			std::cout << "未知的选项，请重新输入！" << std::endl;
-			continue;
-		}
-	}
-}
-//线程1
-
-void T2() {
-	Preset p2;//是否超过整型阈值
-	for (;;) {
-
-		std::cout << "预先项目2:需评测人员数量是否超过整型阈值（65535）？" << std::endl;
-		getline(std::cin, p2.b1);
-
-		if (p2.b1 == "Y") {
-
-			std::cout << "是否确认开启该项？" << std::endl;
-			getline(std::cin, p2.b2);
-
-			if (p2.b2 == "C") {
-				break;
-			}
-			else if (p2.b2 == "A") {
-				continue;
-			}
-			else {
-				std::cout << "未知的选项，请重新输入！" << std::endl;
-				continue;
-			}
-		}
-
-		else if (p2.b1 == "N") {
-
-			std::cout << "是否确认关闭该项？" << std::endl;
-			getline(std::cin, p2.b2);
-
-			if (p2.b2 == "C") {
-
-				break;
-			}
-			else if (p2.b2 == "A") {
-				continue;
-			}
-			else {
-				std::cout << "未知的选项，请重新输入！" << std::endl;
-				continue;
-			}
-		}
-
-		else {
-			std::cout << "未知的选项，请重新输入！" << std::endl;
-			continue;
-		}
-	}
-}
-//线程2
-
 void T3() {
 	Preset p3;//是否简单模式
 	for (;;) {
@@ -163,7 +63,7 @@ void T3() {
 	}
 	//预先设置
 }
-//线程3
+//线程1
 
 void T4() {
 	SimpleMode SM1;
@@ -200,7 +100,7 @@ void T4() {
 	}
 	//简单模式
 }
-//线程4
+//线程2
 
 void T5() {
 	FullMode FM1;
@@ -237,14 +137,10 @@ void T5() {
 	}
 	//全面模式
 }
-//线程5
+//线程3
 
 int main() {
 	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
-	std::thread first(T1);
-	first.join();
-	std::thread second(T2);
-	second.join();
 	std::thread third(T3);
 	third.join();
 	if (GJ1 == true){
@@ -255,7 +151,7 @@ int main() {
 		std::thread  fifth(T5);
 		fifth.join();
 	}
-
+	std::cout << "答案编辑已完成！" << std::endl;
 	system("pause");
 		return 0;
 }
