@@ -16,4 +16,3 @@ struct Preset {
 //‘§œ»…Ë÷√
 
 bool GJ1;
-
