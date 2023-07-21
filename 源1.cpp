@@ -9,16 +9,12 @@
 #include "函数.h"
 #include "结构体.h"
 #include "类.h"
-#include "线程1.h"
 
-using std::ios;
-using std::ofstream;
-
-void T3() {
+void T1() {
 	Preset p3;//是否简单模式
 	for (;;) {
 
-		std::cout << "预先项目3:是否开启简单模式？" << std::endl;
+		std::cout << "预先项目1:是否开启简单模式？" << std::endl;
 		getline(std::cin, p3.b1);
 
 		if (p3.b1 == "Y") {
@@ -65,10 +61,10 @@ void T3() {
 }
 //线程1
 
-void T4() {
+void T2() {
 	SimpleMode SM1;
 	std::ofstream OFS1;
-	OFS1.open("AnswerStorage_SM.txt");
+	OFS1.open("AnswerStorage_M.txt");
 	for (;;) {
 		std::cout << "第" << ++SM1.c1 << "题" << std::endl;
 		std::cout << "请输入预设答案(输入O为结束输入）：" << std::endl;
@@ -84,7 +80,7 @@ void T4() {
 				break;
 			}
 			else if (SM1.c3 == "N") {
-				remove("AnswerStorage.txt");
+				remove("AnswerStorage_M.txt");
 				std::cout << "存储文件已删除，请重新运行程序！" << std::endl;
 				break;
 			}
@@ -102,10 +98,10 @@ void T4() {
 }
 //线程2
 
-void T5() {
+void T3() {
 	FullMode FM1;
 	std::ofstream OFS2;
-	OFS2.open("AnswerStorage_FM.txt");
+	OFS2.open("AnswerStorage_M.txt");
 	std::cout << "是否启用题号与选项间空格？（是请输入Y，否请输入N）" << std::endl;
 	getline(std::cin, FM1.da3);
 	for (;;) {
@@ -113,6 +109,7 @@ void T5() {
 		getline(std::cin, FM1.da1);
 
 		if (FM1.da1 == "O") {
+			OFS2 << FM1.da1 << std::endl;
 			OFS2.close();
 			std::cout << "存储文件已保存！" << std::endl;
 			break;
@@ -129,7 +126,7 @@ void T5() {
 		}
 		else {
 			OFS2.close();
-			remove("AnswerStorage_FM.txt");
+			remove("AnswerStorage_M.txt");
 			std::cout << "未知的选项！存储文件已删除！请重新运行程序!" << std::endl;
 			break;
 		}
@@ -141,17 +138,17 @@ void T5() {
 
 int main() {
 	std::cout << "请输入预先设置（是请输入Y，否请输入N;确认输入请再次输入C，输入错误请再次输入A)" << std::endl;
-	std::thread third(T3);
-	third.join();
+	std::thread first(T1);
+	first.join();
 	if (GJ1 == true){
-		std::thread fourth(T4);
-		fourth.join();
+		std::thread second(T2);
+		second.join();
 	}
 	else if (GJ1== false) {
-		std::thread  fifth(T5);
-		fifth.join();
+		std::thread  third(T3);
+		third.join();
 	}
 	std::cout << "答案编辑已完成！" << std::endl;
 	system("pause");
-		return 0;
+	return EXIT_SUCCESS;
 }

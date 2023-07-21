@@ -131,11 +131,12 @@
     <ClCompile Include="源1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="源2.cpp" />
+    <ClCompile Include="源2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="函数.h" />
-    <ClInclude Include="线程1.h" />
     <ClInclude Include="结构体.h" />
     <ClInclude Include="类.h" />
   </ItemGroup>
