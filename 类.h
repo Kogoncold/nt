@@ -38,5 +38,6 @@ public:
 	int fb1 = 0;
 	int fb2 = 0;
 	int fb3 = 0;
+	int fb4 = 0;
 };
 //批量模式
