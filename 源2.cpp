@@ -137,11 +137,11 @@ int main() {
 	std::thread fouth(T4);
 	fouth.join();
 	if (GJ1 == true) {
-		std::thread seventh(T5);
+		std::thread seventh(T6);
 		seventh.join();
 	}
 	else if (GJ1 == false) {
-		std::thread sixth(T6);
+		std::thread sixth(T5);
 		sixth.join();
 	}
 
