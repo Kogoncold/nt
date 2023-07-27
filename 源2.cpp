@@ -13,12 +13,12 @@
 void T4() {
 	Preset p1;//是否批量处理
 	for (;;) {
-
-		std::cout << "预先项目1:是否批量处理？" << std::endl;
+		std::cout << std::endl;
+		std::cout << "预先项目1:是否批量处理？" << "";
 		getline(std::cin, p1.b1);
 
 		if (p1.b1 == "Y") {
-			std::cout << "是否确认开启该项？" << std::endl;
+			std::cout << "是否确认开启该项？" << "";
 			getline(std::cin, p1.b2);
 
 			if (p1.b2 == "C") {
@@ -29,14 +29,14 @@ void T4() {
 				continue;
 			}
 			else {
-				std::cout << "未知的选项，请重新输入！" << std::endl;
+				std::cout << "未知的选项，请重新输入！" << "";
 				continue;
 			}
 		}
 
 		else if (p1.b1 == "N") {
 
-			std::cout << "是否确认关闭该项？" << std::endl;
+			std::cout << "是否确认关闭该项？" << "";
 			getline(std::cin, p1.b2);
 
 			if (p1.b2 == "C") {
@@ -47,16 +47,17 @@ void T4() {
 				continue;
 			}
 			else {
-				std::cout << "未知的选项，请重新输入！" << std::endl;
+				std::cout << "未知的选项，请重新输入！" << "";
 				continue;
 			}
 		}
 
 		else {
-			std::cout << "未知的选项，请重新输入！" << std::endl;
+			std::cout << "未知的选项，请重新输入！" << "";
 			continue;
 		}
 	}
+	std::cout << std::endl;
 }
 //线程1
 
@@ -65,16 +66,17 @@ void T5() {
 	std::ifstream IFS1;
 		IFS1.open("AnswerStorage_M.txt", std::ios::in);
 		for (;;) {
-			std::cout << "请输入准备好的测试答案：" << std::endl;
+			std::cout << std::endl;
+			std::cout << "请输入准备好的测试答案：" << "";
 			getline(std::cin, TM1.ea1);
 			getline(IFS1, TM1.ea2);
 
 			if (TM1.ea1 == TM1.ea2) {
-				std::cout << "选项正确" << std::endl;
+				std::cout << "选项正确" << "";
 				++TM1.eb1;
 			}
 			else if (TM1.ea1 != TM1.ea2) {
-				std::cout << "选项错误" << std::endl;
+				std::cout << "选项错误" << "";
 				++TM1.eb2;
 			}
 
@@ -86,6 +88,7 @@ void T5() {
 
 		}
 		IFS1.close();
+		std::cout << std::endl;
 }
 //线程2
 
@@ -99,16 +102,17 @@ void T6() {
 	OFS3.open("SummaryOfGrades_M.txt");
 
 	for (;;) {
-		std::cout << "请输入考生答案：" << std::endl;
+		std::cout << std::endl;
+		std::cout << "请输入考生答案	（输入P结束运行）：" << "";
 		getline(std::cin, BM1.fa1);
 		getline(IFS2, BM1.fa2);
 
 		if (BM1.fa1 == BM1.fa2) {
-			std::cout << "选项正确" << std::endl;
+			std::cout << "选项正确" << "";
 			++BM1.fb1;
 		}
 		else if (BM1.fa1 != BM1.fa2) {
-			std::cout << "选项错误" << std::endl;
+			std::cout << "选项错误" << "";
 			++BM1.fb2;
 		}
 
@@ -118,7 +122,7 @@ void T6() {
 
 		if (BM1.fa1 == "O") {
 			OFS3 <<"考生编号：" << ++BM1.fb3 << " " << "共正确" << --BM1.fb1 << "项答案;" << "共错误" << BM1.fb2 << "项答案。" << std::endl;
-			std::cout << "开始下一考生" << std::endl;
+			std::cout << "开始下一考生" << "";
 			BM1.fb1 = 0;
 			BM1.fb2 = 0;
 			IFS2.close();
@@ -129,6 +133,7 @@ void T6() {
 	}
 	IFS2.close();
 	OFS3.close();
+	std::cout << std::endl;
 }
 //线程3
 

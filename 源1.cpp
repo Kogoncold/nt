@@ -70,7 +70,7 @@ void T2() {
 		std::cout << "第" << ++SM1.c1 << "题" << "";
 		std::cout << "请输入预设答案(输入O为结束输入）：" << "";
 		getline(std::cin, SM1.c2);
-		OFS1 << SM1.c2 << "";
+		OFS1 << SM1.c2 << std::endl;
 
 		if (SM1.c2 == "O") {
 			OFS1.close();
@@ -113,7 +113,7 @@ void T3() {
 		getline(std::cin, FM1.da1);
 
 		if (FM1.da1 == "O") {
-			OFS2 << FM1.da1 << "";
+			OFS2 << FM1.da1 << std::endl;
 			OFS2.close();
 			std::cout << "存储文件已保存！" << "";
 			break;
@@ -123,10 +123,10 @@ void T3() {
 		getline(std::cin, FM1.da2);
 
 		if (FM1.da3 == "Y") {
-			OFS2 << FM1.da1 << " " << FM1.da2 << "";
+			OFS2 << FM1.da1 << " " << FM1.da2 << std::endl;
 		}
 		else if (FM1.da3 == "N") {
-			OFS2 << FM1.da1 << FM1.da2 << "";
+			OFS2 << FM1.da1 << FM1.da2 << std::endl;
 		}
 		else {
 			OFS2.close();
