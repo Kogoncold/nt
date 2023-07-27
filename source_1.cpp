@@ -6,8 +6,8 @@
 #include <windows.h>
 #include <thread>
 
-#include "结构体.h"
-#include "类.h"
+#include "struct_1.h"
+#include "class_1.h"
 
 void T1() {
 	Preset p3;//是否简单模式

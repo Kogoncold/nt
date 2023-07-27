@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="源1.cpp">
+    <ClCompile Include="source_1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源2.cpp">
+    <ClCompile Include="source_2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="结构体.h">
+    <ClInclude Include="struct_1.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="类.h">
+    <ClInclude Include="class_1.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
