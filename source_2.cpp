@@ -71,6 +71,12 @@ void T5() {
 			getline(std::cin, TM1.ea1);
 			getline(IFS1, TM1.ea2);
 
+			if (TM1.ea2 == "O") {
+				std::cout << "共正确" << --TM1.eb1 << "项答案;"
+					<< "共错误" << TM1.eb2 << "项答案。" << std::endl;
+				break;
+			}
+
 			if (TM1.ea1 == TM1.ea2) {
 				std::cout << "选项正确" << "";
 				++TM1.eb1;
@@ -78,12 +84,6 @@ void T5() {
 			else if (TM1.ea1 != TM1.ea2) {
 				std::cout << "选项错误" << "";
 				++TM1.eb2;
-			}
-
-			if (TM1.ea2 == "O") {
-				std::cout << "共正确" << --TM1.eb1 << "项答案;"
-					<< "共错误" << TM1.eb2 << "项答案。" << std::endl;
-				break;
 			}
 
 		}
@@ -107,15 +107,6 @@ void T6() {
 		getline(std::cin, BM1.fa1);
 		getline(IFS2, BM1.fa2);
 
-		if (BM1.fa1 == BM1.fa2) {
-			std::cout << "选项正确" << "";
-			++BM1.fb1;
-		}
-		else if (BM1.fa1 != BM1.fa2) {
-			std::cout << "选项错误" << "";
-			++BM1.fb2;
-		}
-
 		if (BM1.fa1 == "P") {
 			break;
 		}
@@ -128,6 +119,15 @@ void T6() {
 			IFS2.close();
 			IFS2.open("AnswerStorage_M.txt", std::ios::in);
 			continue;
+		}
+
+		if (BM1.fa1 == BM1.fa2) {
+			std::cout << "选项正确" << "";
+			++BM1.fb1;
+		}
+		else if (BM1.fa1 != BM1.fa2) {
+			std::cout << "选项错误" << "";
+			++BM1.fb2;
 		}
 
 	}

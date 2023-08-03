@@ -67,20 +67,20 @@ void T2() {
 	OFS1.open("AnswerStorage_M.txt");
 	for (;;) {
 		std::cout << std::endl;
-		std::cout << "第" << ++SM1.c1 << "题" << "";
+		std::cout << "第" << SM1.c3<< "题" << "";
 		std::cout << "请输入预设答案(输入O为结束输入）：" << "";
-		getline(std::cin, SM1.c2);
-		OFS1 << SM1.c2 << std::endl;
+		getline(std::cin, SM1.c1);
+		OFS1 << SM1.c1 << std::endl;
 
-		if (SM1.c2 == "O") {
+		if (SM1.c1 == "O") {
 			OFS1.close();
 			std::cout << "是否确认答案？（是请输入Y，否请输入N）" << "";
-			getline(std::cin, SM1.c3);
-			if (SM1.c3 == "Y") {
+			getline(std::cin, SM1.c2);
+			if (SM1.c2 == "Y") {
 				std::cout << "存储文件已保存！" << "";
 				break;
 			}
-			else if (SM1.c3 == "N") {
+			else if (SM1.c2 == "N") {
 				remove("AnswerStorage_M.txt");
 				std::cout << "存储文件已删除，请重新运行程序！" << "";
 				break;

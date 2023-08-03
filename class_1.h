@@ -4,9 +4,9 @@
 
 class SimpleMode {
 public:
-	int c1 = 0;
+	std::string c1;
 	std::string c2;
-	std::string c3;
+	int c3;
 };
 //简单模式
 
@@ -17,6 +17,8 @@ public:
 	std::string da2;//选项字符串
 	std::string da3;//题目空格
 	std::string da4;//题目是否正确输入
+private:
+
 };
 //全面模式
 
