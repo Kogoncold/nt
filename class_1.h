@@ -6,7 +6,7 @@ class SimpleMode {
 public:
 	std::string c1;
 	std::string c2;
-	int c3;
+	int c3=0;
 };
 //¼òµ¥Ä£Ê½
 

@@ -67,7 +67,7 @@ void T2() {
 	OFS1.open("AnswerStorage_M.txt");
 	for (;;) {
 		std::cout << std::endl;
-		std::cout << "第" << SM1.c3<< "题" << "";
+		std::cout << "第" << ++SM1.c3<< "题" << "";
 		std::cout << "请输入预设答案(输入O为结束输入）：" << "";
 		getline(std::cin, SM1.c1);
 		OFS1 << SM1.c1 << std::endl;
