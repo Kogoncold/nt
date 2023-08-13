@@ -16,3 +16,4 @@ struct Preset {
 //预先设置
 
 bool GJ1;
+std::string GK1;

@@ -65,6 +65,8 @@ void T2() {
 	SimpleMode SM1;
 	std::ofstream OFS1;
 	OFS1.open("AnswerStorage_M.txt");
+	std::ofstream OFS1_2;
+	OFS1_2.open("Scores_M.txt");
 	for (;;) {
 		std::cout << std::endl;
 		std::cout << "第" << ++SM1.c3<< "题" << "";
@@ -72,8 +74,10 @@ void T2() {
 		getline(std::cin, SM1.c1);
 		OFS1 << SM1.c1 << std::endl;
 
+
 		if (SM1.c1 == "O") {
 			OFS1.close();
+			OFS1_2.close();
 			std::cout << "是否确认答案？（是请输入Y，否请输入N）" << "";
 			getline(std::cin, SM1.c2);
 			if (SM1.c2 == "Y") {
@@ -82,6 +86,7 @@ void T2() {
 			}
 			else if (SM1.c2 == "N") {
 				remove("AnswerStorage_M.txt");
+				remove("Scores_M.txt");
 				std::cout << "存储文件已删除，请重新运行程序！" << "";
 				break;
 			}
@@ -89,10 +94,12 @@ void T2() {
 				std::cout << "未知的选项！存储文件已保存最后一次输入！请重新运行程序！" << "";
 				break;
 			}
-
 		}
 
 		else {
+			std::cout << "请输入预设分数：" << "";
+			getline(std::cin, GK1);
+			OFS1_2 << GK1 << std::endl;
 			continue;
 		}
 	}
@@ -105,6 +112,8 @@ void T3() {
 	FullMode FM1;
 	std::ofstream OFS2;
 	OFS2.open("AnswerStorage_M.txt");
+	std::ofstream OFS1_2;
+	OFS1_2.open("Scores_M.txt");
 	std::cout << "是否启用题号与选项间空格？（是请输入Y，否请输入N）" << std::endl;
 	getline(std::cin, FM1.da3);
 	for (;;) {
